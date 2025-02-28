@@ -1,55 +1,94 @@
-# Conservation Mode Toggle for Lenovo Laptops
+# Lenovo Conservation Mode Toggle
 
-This Python script allows you to **enable** or **disable** Conservation Mode on Lenovo laptops running Linux.
+A simple Python script to enable, disable, or check the status of Conservation Mode on Lenovo laptops running Linux.
 
-Conservation Mode helps to prolong battery lifespan by limiting the maximum charge to around 80%, instead of 100%, which is useful for laptops plugged in for extended periods.
+## Usage
 
-## Features
-- Enable or disable Conservation Mode.
-- Check current Conservation Mode status.
-- Simple command-line interface.
-
-## Prerequisites
+### Prerequisites
 - Python 3.x
-- `argparse`
 - Root privileges (sudo)
 
-## Installation
+### Installation
 1. Clone the repository:
    ```bash
    git clone https://github.com/username/conservation_mode.git
    cd conservation_mode
    ```
-
 2. Make the script executable:
    ```bash
    chmod +x conservation_mode.py
    ```
+3. Install the script globally using the provided install script:
+   ```bash
+   chmod +x install.sh
+   sudo ./install.sh
+   ```
 
-## Usage
-### Check Current Status
+### Install Script Details
+To simplify installation, use `install.sh`, which performs the following steps:
 ```bash
-python3 conservation_mode.py get
+#!/bin/bash
+
+SCRIPT_NAME="conservation_mode.py"
+DEST_PATH="/usr/local/bin/conservation_mode"
+
+# Check if the script exists in the current directory
+if [ ! -f "$SCRIPT_NAME" ]; then
+    echo "Error: $SCRIPT_NAME not found in the current directory."
+    exit 1
+fi
+
+# Copy the script to /usr/local/bin
+sudo cp "$SCRIPT_NAME" "$DEST_PATH"
+
+# Make it executable
+sudo chmod +x "$DEST_PATH"
+
+echo "Installation complete! You can now run 'conservation_mode' from anywhere."
 ```
 
-### Enable Conservation Mode
+### Command Line Arguments
+
 ```bash
-sudo python3 conservation_mode.py -m enable
+usage: conservation_mode [-h] [-m {enable,disable}] [{get}]
 ```
 
-### Disable Conservation Mode
+This tool toggles conservation mode on Lenovo laptops.
+
+#### Positional Arguments:
+- `get` : Use this to check the current status of Conservation Mode.
+
+#### Optional Arguments:
+- `-h, --help` : Show help message and exit.
+- `-m {enable,disable}, --mode {enable,disable}` : Set Conservation Mode to either `enable` or `disable`.
+
+### Examples
+
+Check current Conservation Mode status:
 ```bash
-sudo python3 conservation_mode.py -m disable
+sudo conservation_mode get
 ```
 
-### Help
+Enable Conservation Mode:
 ```bash
-python3 conservation_mode.py -h
+sudo conservation_mode -m enable
 ```
+
+Disable Conservation Mode:
+```bash
+sudo conservation_mode -m disable
+```
+
+## License
+This project is licensed under the MIT License.
 
 ## Contributing
-Pull requests are welcome! Feel free to open an issue if you encounter any problems.
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
 ## Author
-[Abhishek Ojha](https://abhishekojha.com.np)
+Abhishek Ojha
+
+## Links
+- [Portfolio](https://abhishekojha.com.np)
+- [GitHub](https://github.com/username)
 
