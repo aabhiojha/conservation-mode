@@ -49,7 +49,7 @@ def set_status(value):
         mode = '1' if value == 'enable' else '0'
         with open(file_path, "w") as f:
             f.write(mode)
-        print(f"Conservation mode {'enabled' if value == 'enable' else 'disabled'}.")
+        print(f"Conservation mode {'enabled' if value == 'enable' else 'disabled'}. The battery is {'capped' if value == 'enable' else 'set to 100%'}")
     except PermissionError:
         print("Error: Insufficient permissions. Please run with sudo.")
         sys.exit(1)
