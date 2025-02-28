@@ -2,7 +2,7 @@
 
 This Python script allows you to **enable** or **disable** Conservation Mode on Lenovo laptops running Linux.
 
-Conservation Mode helps to prolong battery lifespan by limiting the maximum charge to around 60%, instead of 100%, which is useful for laptops plugged in for extended periods.
+Conservation Mode helps to prolong battery lifespan by limiting the maximum charge to around 80%, instead of 100%, which is useful for laptops plugged in for extended periods.
 
 ## Features
 - Enable or disable Conservation Mode.
