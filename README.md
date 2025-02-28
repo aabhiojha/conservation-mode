@@ -47,9 +47,6 @@ sudo python3 conservation_mode.py -m disable
 python3 conservation_mode.py -h
 ```
 
-## License
-This project is licensed under the MIT License.
-
 ## Contributing
 Pull requests are welcome! Feel free to open an issue if you encounter any problems.
 
