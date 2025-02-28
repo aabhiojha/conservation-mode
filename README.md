@@ -20,12 +20,12 @@ A simple Python script to enable, disable, or check the status of Conservation M
    ```
 3. Install the script globally using the provided install script:
    ```bash
-   chmod +x install.sh
-   sudo ./install.sh
+   chmod +x addToPath.sh
+   sudo ./addToPath.sh
    ```
 
 ### Install Script Details
-To simplify installation, use `install.sh`, which performs the following steps:
+To simplify installation, use `addToPath.sh`, which performs the following steps:
 ```bash
 #!/bin/bash
 
